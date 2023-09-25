@@ -6,7 +6,7 @@ ENV TZ "Asia/Shanghai"
 RUN set -x \
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive TZ="$TZ" apt-get install --no-install-recommends --no-install-suggests -y tzdata \
-    && apt-get install --no-install-recommends --no-install-suggests -y linux-headers-$(uname -r) git cmake libpcre3-dev libssl-dev
+    && apt-get install --no-install-recommends --no-install-suggests -y ca-certificates linux-headers-$(uname -r) git cmake libpcre3-dev libssl-dev
 
 RUN set -x \
     && build_dir="/opt/accel-ppp" \
