@@ -1,8 +1,12 @@
 FROM ubuntu:20.04
 MAINTAINER Fluke667 <Fluke667@gmail.com> AnShen <root@lshell.com>
 
+ENV TZ "Asia/Shanghai"
+
 RUN set -x \
     && apt-get update \
+    && apt-get install --no-install-recommends --no-install-suggests -y tzdata \
+    && echo $TZ > /etc/timezone \
     && apt-get install --no-install-recommends --no-install-suggests -y linux-headers-$(uname -r) git cmake libpcre3-dev libssl-dev
 
 RUN set -x \
