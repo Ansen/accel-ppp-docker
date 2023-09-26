@@ -22,7 +22,8 @@ RUN set -x \
     && rm -rf ${build_dir} \
     && mkdir -p /etc/accel-ppp /etc/ppp \
     && cp  /usr/local/etc/accel-ppp.conf.dist  /etc/accel-ppp/accel-ppp.conf \
-    && touch /etc/ppp/chap-secrets
+    && touch /etc/ppp/chap-secrets /etc/ppp/ip-up. \
+    && chmod +x /etc/ppp/ip-up.
     ## && modprobe vlan_mon ipoe pptp \
 
 
