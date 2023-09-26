@@ -18,6 +18,8 @@ RUN set -x \
     && cmake -DBUILD_DRIVER=FALSE -DKDIR=/usr/src/linux-headers-$(uname -r)-generic -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DLOG_PGSQL=FALSE -DSHAPER=FALSE -DRADIUS=FALSE -DNETSNMP=FALSE .. \
     && make \
     && make install \
+    && cd / \
+    && rm -rf ${build_dir} \
     && mkdir -p /etc/accel-ppp /etc/ppp \
     && cp  /usr/local/etc/accel-ppp.conf.dist  /etc/accel-ppp/accel-ppp.conf \
     && touch /etc/ppp/chap-secrets
