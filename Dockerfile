@@ -15,7 +15,7 @@ RUN set -x \
     && git clone https://github.com/xebd/accel-ppp.git . \
     && mkdir "$build_dir/build" \
     && cd "build" \
-    && cmake -DBUILD_DRIVER=FALSE -DKDIR=/usr/src/linux-headers-$(uname -r)-generic -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DLOG_PGSQL=FALSE -DSHAPER=FALSE -DRADIUS=FALSE -DNETSNMP=FALSE .. \
+    && cmake -DBUILD_DRIVER=FALSE -DKDIR=/usr/src/linux-headers-$(uname -r)-generic -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_BUILD_TYPE=Release -DLOG_PGSQL=FALSE -DSHAPER=FALSE -DRADIUS=FALSE -DNETSNMP=FALSE -DLUA=TRUE .. \
     && make \
     && make install \
     && cd / \
